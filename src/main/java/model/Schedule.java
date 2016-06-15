@@ -1,21 +1,32 @@
 package model;
 
-import java.sql.Time;
-import java.sql.Timestamp;
+
+import java.time.LocalTime;
 
 /**
  * Created by ositadinmaeze on 12/06/2016.
  */
 
 public abstract class Schedule {
-    private Timestamp startTime;
-    private Timestamp endTime;
+    private LocalTime startTime;
+    private LocalTime endTime;
 
 
-    public void setStartTime(Timestamp timestamp){
-        startTime = timestamp;
-    };
-    public void getStartTime(Timestamp timestamp){
-        endTime = timestamp;
+    public LocalTime getStartTime() {
+        return startTime;
     }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
+
+
 }

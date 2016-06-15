@@ -26,7 +26,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="schedule_hibernate" target="1.5" />
+      <module name="schedule_hibernate" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
