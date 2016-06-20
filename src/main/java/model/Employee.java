@@ -1,38 +1,65 @@
 package model;
 
+
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by ositadinmaeze on 12/06/2016.
  */
 @Entity
-@Table(name = "")
+@Table(name = "employee")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "first_name")
     private String firstName;
+
+    @Column
+    private String middleName;
+
     @Column(name = "last_name")
     private String lastName;
+
     @Column(name = "sex")
     private String Sex;
+
     @Column(name = "employee_role")
     private String employeeRole;
+
+    @ElementCollection
+    @CollectionTable(name="employee_skill_types", joinColumns=@JoinColumn(name="id"))
     @Column(name = "skill_type")
-    private ArrayList<String> skillType;
+    private Set<String> skillType = new HashSet();
 
 
     public Employee(){}
 
-    public Employee(String firstName, String lastName, String sex, String employeeRole, ArrayList <String> skillType){
+    public Employee(String firstName, String middleName, String lastName, String sex, String employeeRole, Set<String> skillType){
+        this.setFirstName(firstName);
+        this.setMiddleName(middleName);
+        this.setLastName(lastName);
+        this.setSex(sex);
+        this.setEmployeeRole(employeeRole);
+        this.setSkillType(skillType);
+    }
+
+    public Employee(String firstName, String lastName, String sex, String employeeRole, Set <String> skillType){
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setSex(sex);
         this.setEmployeeRole(employeeRole);
         this.setSkillType(skillType);
+    }
+
+    public Employee(String firstName, String lastName){
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
     }
 
     public Long getId() {
@@ -49,6 +76,14 @@ public class Employee {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public String getLastName() {
@@ -75,11 +110,16 @@ public class Employee {
         this.employeeRole = employeeRole;
     }
 
-    public ArrayList<String> getSkillType() {
+    public Set<String> getSkillType() {
         return skillType;
     }
 
-    public void setSkillType(ArrayList<String> skillType) {
+    public void setSkillType(Set<String> skillType) {
         this.skillType = skillType;
+    }
+
+    @Override
+    public String toString(){
+        return this.getFirstName() + " " + this.getLastName() + " " + this.getSkillType();
     }
 }

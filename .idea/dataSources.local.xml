@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="hibernate.cfg.xml/Hibernate" uuid="cdb748b4-4c74-4669-a1ed-4fd981cb90d9">
+    <data-source name="MySQL - rota_management@localhost" uuid="db97c1fc-ebca-4136-9cd1-c2d8d8921645">
+      <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-    </data-source>
-    <data-source name="MySQL - @localhost" uuid="bd7ea577-28dc-4d96-b777-97b023816f34">
-      <secret-storage>memory</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>sys.*</schema-pattern>
-      <default-schemas>sys.*</default-schemas>
+      <schema-pattern>rota_management.*</schema-pattern>
+      <default-schemas>rota_management.*</default-schemas>
     </data-source>
   </component>
 </project>
