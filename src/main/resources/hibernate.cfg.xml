@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/rota_management</property>
+        <property name="connection.username">root</property>
+        <!-- <property name="connection.password">password</property> -->
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <!-- Create/update tables automatically using mapping metadata -->
+
+        <!--<property name="hbm2ddl.auto">update</property>-->
+        <!-- Use XML-based mapping metadata -->
+        <!-- <mapping resource="Message.hbm.xml"/> -->
+
+        <!-- Use Annotation-based mapping metadata -->
+        <mapping class="model.Employee"/>
+        <mapping class="model.Schedule"/>
+        <mapping class="model.ServiceUser"/>
+        <mapping class="model.WorkSchedule"/>
+    </session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
