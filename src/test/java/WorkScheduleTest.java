@@ -64,7 +64,7 @@ public class WorkScheduleTest {
             transaction.commit();
 
             Assert.assertEquals(savedWorkScheduleId, session.get(WorkSchedule.class, savedWorkScheduleId).getId());
-            
+
         }
         catch (Exception exception){
             if (transaction.getStatus() == TransactionStatus.ACTIVE || transaction.getStatus() == TransactionStatus.MARKED_ROLLBACK){
