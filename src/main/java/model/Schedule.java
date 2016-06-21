@@ -1,6 +1,7 @@
 package model;
 
 
+import javax.persistence.Column;
 import java.time.LocalTime;
 
 /**
@@ -8,7 +9,9 @@ import java.time.LocalTime;
  */
 
 public abstract class Schedule {
+    @Column(name = "id")
     private LocalTime startTime;
+    @Column(name = "id")
     private LocalTime endTime;
 
 

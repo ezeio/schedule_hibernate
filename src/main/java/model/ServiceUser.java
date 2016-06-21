@@ -1,8 +1,6 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by ositadinmaeze on 12/06/2016.
@@ -10,8 +8,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "service_user")
 public class ServiceUser {
-    @Column(name="id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Column(name="first_name")
     private String firstName;
     @Column(name="last_name")
